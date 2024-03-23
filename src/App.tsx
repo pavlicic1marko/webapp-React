@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -20,16 +21,8 @@ function App() {
     </div>
   </div>
 </nav>
-      <main className="form-signin w-100 m-auto">
-        <form>
-            <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
-
-            <input type="email" className="form-control"  placeholder="name@example.com" />
-
-            <input type="password" className="form-control"  placeholder="Password" />
-
-            <button className="btn btn-primary w-100 py-2" type="submit">Sign in</button>
-        </form>
+        <main className="form-signin w-100 m-auto">
+            <Login />
         </main>
     </div>
   );
