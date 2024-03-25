@@ -5,14 +5,24 @@ import React, {useState, SyntheticEvent} from 'react';
         const [name, setName] = useState(''); //name is variable, setName is function
         const [email, setEmail] = useState('');
         const [password, setPassword] = useState('');
-        const submit = (e: SyntheticEvent) => {
+
+        const submit = async (e: SyntheticEvent) => {
         e.preventDefault(); // prevent refresh
-        console.log({   //log to browser console
-            name,
-            email,
-            password
-        })
-        } //
+            const response = await fetch('http://localhost:8000/api/register',{
+                method: 'POST',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({
+                    name,
+                    email,
+                    password
+                })
+            })
+
+            const content = await response.json();
+            console.log(content);
+
+        }
+
 
         return(
         <div>
