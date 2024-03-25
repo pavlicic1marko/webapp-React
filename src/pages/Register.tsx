@@ -6,6 +6,7 @@ import React, {useState, SyntheticEvent} from 'react';
         const [name, setName] = useState(''); //name is variable, setName is function
         const [email, setEmail] = useState('');
         const [password, setPassword] = useState('');
+        const [redirect, setRedirect] = useState(false);
 
         const submit = async (e: SyntheticEvent) => {
         e.preventDefault(); // prevent refresh
@@ -18,12 +19,16 @@ import React, {useState, SyntheticEvent} from 'react';
                     password
                 })
             });
+
+            setRedirect(true);
         }
-        return <Redirect to='/login'/>;
+        if (redirect){
+            return <Redirect to='/login'/>;
+        }
 
         return(
         <div>
-            <form onSubmit={submit}> //call function named submit
+            <form onSubmit={submit}>
                 <h1 className="h3 mb-3 fw-normal">Please register</h1>
 
                 <input  className="form-control"  placeholder="name" required
