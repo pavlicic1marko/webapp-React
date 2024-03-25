@@ -1,3 +1,4 @@
+import {Redirect} from 'react-router-dom';
 import React, {useState, SyntheticEvent} from 'react';
 
     const Register = () => {
@@ -8,7 +9,7 @@ import React, {useState, SyntheticEvent} from 'react';
 
         const submit = async (e: SyntheticEvent) => {
         e.preventDefault(); // prevent refresh
-            const response = await fetch('http://localhost:8000/api/register',{
+             await fetch('http://localhost:8000/api/register',{
                 method: 'POST',
                 headers: {'Content-Type':'application/json'},
                 body: JSON.stringify({
@@ -16,13 +17,9 @@ import React, {useState, SyntheticEvent} from 'react';
                     email,
                     password
                 })
-            })
-
-            const content = await response.json();
-            console.log(content);
-
+            });
         }
-
+        return <Redirect to='/login'/>;
 
         return(
         <div>
