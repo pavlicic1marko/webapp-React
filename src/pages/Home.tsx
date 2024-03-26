@@ -1,15 +1,18 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 
     const Home = () => {
+        const [name, setName] = useState('');
 
         useEffect( ()=>{
         (
 
             async () => {
-                 await fetch('http://localhost:8000/api/home',{
+                 const response = await fetch('http://localhost:8000/api/home',{
                     headers: {'Content-Type':'application/json'},
                     credentials:'include',
                 });
+                const content = await response.json();
+                setName(content.name);
 
                 }
             )();
@@ -18,7 +21,7 @@ import React, {useEffect} from 'react';
         return(
         <div>
             <form>
-                Home
+                Hi {name}
             </form>
         </div>
         );
