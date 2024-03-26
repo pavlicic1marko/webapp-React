@@ -21,7 +21,7 @@ import React, {useEffect, useState} from 'react';
         return(
         <div>
             <form>
-                Hi {name}
+                Hi {name ? 'Hi' + name: 'you are not authenticated'}
             </form>
         </div>
         );
