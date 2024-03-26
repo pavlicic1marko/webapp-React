@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState, SyntheticEvent} from 'react';
+
 
     const Login = () => {
         const [email, setEmail] = useState('');
@@ -17,7 +18,7 @@ import React from 'react';
                 })
             });
 
-            setRedirect(true);
+            //setRedirect(true);
         }
 
         return(
