@@ -1,9 +1,13 @@
 import React, {useState, SyntheticEvent} from 'react';
+import {Redirect} from 'react-router-dom';
+
 
 
     const Login = () => {
         const [email, setEmail] = useState('');
         const [password, setPassword] = useState('');
+        const [redirect, setRedirect] = useState(false);
+
 
         const submit = async (e: SyntheticEvent) => {
         e.preventDefault(); // prevent refresh
@@ -18,7 +22,11 @@ import React, {useState, SyntheticEvent} from 'react';
                 })
             });
 
-            //setRedirect(true);
+            setRedirect(true);
+        }
+
+        if (redirect){
+            return <Redirect to='/'/>;
         }
 
         return(
