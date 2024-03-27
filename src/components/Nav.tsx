@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 
-    const Nav = (props:{name: string}) => {
+    const Nav = (props:{name: string, setName:(name: string) => void}) => { /* name and setName */
         let menu; // create a varible with block scope
 
         const logout = async () => {
@@ -11,6 +11,7 @@ import {Link} from 'react-router-dom';
                 headers: {'Content-Type':'application/json'},
                 credentials:'include'
             });
+            props.setName(''); // set props.name to '' after logout
         }
 
 
