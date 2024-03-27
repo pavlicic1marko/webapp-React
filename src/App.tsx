@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
         <BrowserRouter>
-            <Nav name={name} setName ={setName}/> /* after logout set the name, no need to refresh */
+            <Nav name={name} setName ={setName}/> {/* after logout set the name, no need to refresh */}
             <main className="form-signin w-100 m-auto">
                 <Route path='/' exact component ={() => <Home name={name}/>}/>
                 <Route path='/login' component ={Login}/>

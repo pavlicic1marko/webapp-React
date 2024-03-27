@@ -44,7 +44,7 @@ import {Link} from 'react-router-dom';
                 </div>
 
             <ul className="navbar-nav me-auto mb-2 mb-md-0">
-                {menu} /* show login or logout button */
+                {menu} {/* show login or logout button */}
             </ul>
             </nav>
         );
