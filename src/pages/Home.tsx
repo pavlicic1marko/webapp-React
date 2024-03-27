@@ -1,28 +1,11 @@
 import React, {useEffect, useState} from 'react';
 
-    const Home = () => {
-        const [name, setName] = useState('');
+    const Home = (props: {name: string }) =>{
 
-        useEffect( ()=>{
-        (
 
-            async () => {
-                 const response = await fetch('http://localhost:8000/api/home',{
-                    headers: {'Content-Type':'application/json'},
-                    credentials:'include',
-                });
-                const content = await response.json();
-                setName(content.name);
-
-                }
-            )();
-        });
-
-        return(
+    return(
         <div>
-            <form>
-                {name ? 'Hi ' + name: 'you are not authenticated'}
-            </form>
+                {props.name ? 'Hi ' + props.name : 'you are not authenticated'}
         </div>
         );
     };
