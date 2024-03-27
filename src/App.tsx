@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
         <BrowserRouter>
-            <Nav/>
+            <Nav name={name} />
             <main className="form-signin w-100 m-auto">
                 <Route path='/' exact component ={() => <Home name={name}/>}/>
                 <Route path='/login' component ={Login}/>
