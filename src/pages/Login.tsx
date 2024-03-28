@@ -22,9 +22,9 @@ import {Redirect} from 'react-router-dom';
                 })
             });
             const content = await response.json();
+            props.setName(content.name)
             setRedirect(true);
 
-            props.setName(content.name)
         }
 
         if (redirect){

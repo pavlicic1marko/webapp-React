@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 
 
     const Nav = (props:{name: string, setName:(name: string) => void}) => { /* name and setName */
-        let menu; // create a varible with block scope
 
         const logout = async () => {
              await fetch('http://localhost:8000/api/logout',{
@@ -14,6 +13,7 @@ import {Link} from 'react-router-dom';
             props.setName(''); // set props.name to '' after logout
         }
 
+        let menu; // create a varible with block scope
 
         if (props.name === '') {
             menu = (

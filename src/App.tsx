@@ -16,7 +16,7 @@ function App() {
         (
 
             async () => {
-                 const response = await fetch('http://localhost:8000/api/home',{
+                 const response = await fetch('http://localhost:8000/api/user',{
                     headers: {'Content-Type':'application/json'},
                     credentials:'include',
                 });
